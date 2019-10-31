@@ -23,7 +23,7 @@ doc = Nokogiri.HTML(html)
 #doc.at('.wikitable').css('tr.se-dil').size
 
 doc.at('.wikitable').css('tr.se-dil').each{|row| puts row.at('td:nth(2)').text}
-[<32;1;1M[<32;1;1M
+
 binding.pry
 
 
