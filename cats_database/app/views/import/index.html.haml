@@ -1,0 +1,11 @@
+%h1 Import index
+%table
+  - @customers.each do |customer|
+    %tr
+      %td= customer.email
+      %td= customer.firstname
+      %td= customer.lastname
+      %td
+        - customer.orders.each do |order|
+          = order.name
+

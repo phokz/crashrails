@@ -1,0 +1,7 @@
+<%= form_tag import_review_path, method: :post, multipart: true do %>
+  <%= file_field_tag 'file' %>
+  <label>User:</label>
+  <%= text_field_tag 'user', 'John'%>
+  <%= submit_tag %>
+<% end %>
+

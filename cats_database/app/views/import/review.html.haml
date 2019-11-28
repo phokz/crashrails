@@ -1,0 +1,15 @@
+%h1 Import#review
+= debug @data
+%table
+  - @customers.each do |customer|
+    - customer.valid?
+    %tr
+      %td{style: "background-color: #{customer.errors.messages.keys.include?(:email) ? 'red' : 'white'}"}= best_in_place customer, 'email'
+      %td{style: "background-color: #{customer.errors.messages.keys.include?(:firstname) ? 'red' : 'white'}"}= best_in_place customer, 'firstname'
+      %td{style: "background-color: #{customer.errors.messages.keys.include?(:lastname) ? 'red' : 'white'}"}= best_in_place customer, 'lastname'
+      %td
+        - customer.orders.each do |order|
+          - order.valid?
+          %span{style: "background-color: #{order.errors.messages.keys.include?(:name) ? 'red' : 'white'}"}= best_in_place order, 'name'
+= link_to 'Confirm', import_perform_path(import_id: @import_id), method: :post
+= link_to 'Decline', import_decline_path(import_id: @import_id), method: :post

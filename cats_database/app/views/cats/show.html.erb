@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= best_in_place @cat, :name, tabindex: "1" %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @cat.age %>
+</p>
+
+<p>
+  <strong>Sex:</strong>
+  <%= @cat.sex %>
+</p>
+
+<%= link_to 'Edit', edit_cat_path(@cat) %> |
+<%= link_to 'Back', cats_path %>
